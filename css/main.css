@@ -381,6 +381,7 @@ align-self: center;
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
+    margin-bottom: 2em;
   }
   
   .formulario .row {
@@ -494,4 +495,149 @@ align-self: center;
     margin: 20px 0;
     text-align: center;
     flex-grow: 1;
+}
+
+.error-form {
+  font-family: roboto,sans-serif;
+  text-align: left;
+  color: #cf3141;
+  font-size: 14px;
+  position: relative;
+  margin: 0 0 10px 0;
+  font-weight: 700
+}
+
+
+.spinner,
+.spinner:before,
+.spinner:after {
+  background: #000;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 10px;
+}
+.spinner {
+  color: #000;
+  text-indent: -9999em;
+  position: relative;
+  font-size: 11px;
+  margin-top:2.5em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+  margin-left: 3em;
+}
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.spinner:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 2em;
+  }
+  40% {
+    box-shadow: 0 -1em;
+    height: 3em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 2em;
+  }
+  40% {
+    box-shadow: 0 -1em;
+    height: 3em;
+  }
+}
+
+#validacion-nombre {
+  display: none;
+}
+
+#validacion-asunto {
+  display: none;
+}
+
+#validacion-email {
+  display: none;
+}
+
+#validacion-mensaje {
+  display: none;
+}
+
+.spinner {
+  display: none;
+}
+
+
+
+
+.msj {
+  display: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 10px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 450px;
+  text-align: center;
+  margin: 25px 0 10px 10px;
+}
+
+ .msj span:after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -10px;
+  left: 1.5em;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent
+}
+
+ .msj a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 700
+}
+
+ .msj.msj-ok {
+  background: #31b404
+}
+
+ .msj.msj-ok span:after {
+  border-bottom: 20px solid #31b404
+}
+
+
+.error-envio {
+  display: none;
+  font-family: roboto,sans-serif;
+    text-align: left;
+    color: #cf3141;
+    font-size: 14px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-weight: 700
 }

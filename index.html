@@ -361,7 +361,7 @@ Principal responsable del mantenimiento y funcionamiento.
                   </div>
                </blockquote>
 
-               <div class="formulario">
+               <div id="formulario" class="formulario">
           
                   <div class="col">
 
@@ -374,16 +374,22 @@ Principal responsable del mantenimiento y funcionamiento.
                               <div class="row mb-3">
                                 <div class="col">
                                   <div class="input-group">
-                                    <input class="form-control" type="text" name="name" id="name" placeholder="Nombre"
-                                      required>
+                                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre"
+                                      >
+                                      <div id="validacion-nombre" class="error-form">
+                                        <b>Ingrese un nombre</b>
+                                      </div>
                                   </div>
                                 </div>
                               </div>
                               <div class="row mb-3">
                                 <div class="col">
                                   <div class="input-container">
-                                    <input class="form-control" type="text" name="subject" id="subject" placeholder="Asunto"
-                                      required>
+                                    <input class="form-control" type="text" name="asunto" id="asunto" placeholder="Asunto"
+                                      >
+                                      <div id="validacion-asunto" class="error-form">
+                                        <b>Ingrese un asunto</b>
+                                      </div>
                                   </div>
                                 </div>
                               </div>
@@ -391,24 +397,51 @@ Principal responsable del mantenimiento y funcionamiento.
                                 <div class="col">
                                   <div class="input-group">
                                     <input class="form-control" type="text" name="email" id="email" placeholder="E-mail"
-                                      required>
+                                      >
+                                      <div id="validacion-email" class="error-form">
+                                        <b>El e-mail es inválido</b>
+                                      </div>
                                   </div>
                                 </div>
                               </div>
                               <div class="row mb-3">
                                 <div class="col">
                                   <div class="form-group">
-                                    <textarea class="form-control" name="mensaje" id="message" placeholder="Mensaje ..."
-                                      required></textarea>
+                                    <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Mensaje ..."
+                                      ></textarea>
+                                      <div id="validacion-mensaje" class="error-form">
+                                        <b>El cuerpo del mensaje esta vacío.</b>
+                                      </div>
                                   </div>
                                 </div>
                               </div>
                               <div class="row">
                                 <div class="col">
-                                  <button class="btn" disabled type="button" id="submitBtn">Enviar</button>
+                                  <button class="btn" type="submit" id="submitBtn">Enviar</button>
                                 </div>
+                                
                               </div>
+                              <div class="spinner" id="spinner">Procesando ...</div>
+                              <div
+              id="envio-error"
+              class="error-envio"
+            >
+              <b
+                >Hubo un inconveniente al enviar la información. Intente
+                nuevamente o pruebe más tarde.</b
+              >
+            </div>
+
+                              <div class="msj msj-ok">
+                                <span
+                                  ><p><b>Gracias por contactarse.</b></p>
+                                  En breve nos estaremos comunicando con usted.
+                              </div>
+
+
+                            </div>
                             </form>
+                            
                           </div>
                         </div>
                     </div>
@@ -446,6 +479,7 @@ Principal responsable del mantenimiento y funcionamiento.
     let particleCanvas = new ParticleNetwork(canvasDiv, options);
 
       </script>
+      <script src="formulario.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
    </body>
 </html>
